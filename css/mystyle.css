@@ -1,0 +1,9 @@
+p,
+div,
+section {
+  font-family: Merriweather, Georgia, "Times New Roman", Times, serif;
+  font-size: 18;
+}
+li.active {
+  background: #337ab7;
+}
