@@ -3,12 +3,12 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package com.newbie.web.models.entities;
+package com.newbie.web.utilities;
 
 /**
  *
  * @author trongbui
  */
-public class User {
+public class ConnectionUtilities {
     
 }

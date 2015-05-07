@@ -3,12 +3,12 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package com.newbie.web.models;
+package com.newbie.web.entities;
 
 /**
  *
  * @author trongbui
  */
-public class StudentDAO {
+public class User {
     
 }
