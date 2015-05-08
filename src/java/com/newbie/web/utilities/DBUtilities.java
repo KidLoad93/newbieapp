@@ -13,9 +13,9 @@ import java.util.Date;
  *
  * @author trongbui
  */
-public class ConnectionUtilities {
+public class DBUtilities {
 
-    private ConnectionUtilities() {
+    private DBUtilities() {
     }
 
     public static Connection getConnection() {
@@ -29,7 +29,4 @@ public class ConnectionUtilities {
         return null;
     }
 
-    public static java.sql.Date toSqlDate(Date date) {
-        return new java.sql.Date(date.getTime());
-    }
 }
