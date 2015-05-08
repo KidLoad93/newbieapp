@@ -2,13 +2,6 @@
 <project-private xmlns="http://www.netbeans.org/ns/project-private/1">
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
-        <group>
-            <file>file:/E:/Java/JavaEE/NewbieApp/web/WEB-INF/web.xml</file>
-            <file>file:/E:/Java/JavaEE/NewbieApp/web/public/views/home.jsp</file>
-            <file>file:/E:/Java/JavaEE/NewbieApp/src/java/com/newbie/web/utilities/DBUtilities.java</file>
-            <file>file:/E:/Java/JavaEE/NewbieApp/src/java/com/newbie/web/controllers/HomeController.java</file>
-            <file>file:/E:/Java/JavaEE/NewbieApp/src/java/com/newbie/web/dal/StudentDAO.java</file>
-            <file>file:/E:/Java/JavaEE/NewbieApp/src/java/com/newbie/web/entities/Student.java</file>
-        </group>
+        <group/>
     </open-files>
 </project-private>
