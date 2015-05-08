@@ -28,7 +28,7 @@ public class HomeController extends HttpServlet {
             throws ServletException, IOException {
         List<Student> students = StudentDAO.getAllStudents();
         request.setAttribute("students", students);
-        RequestDispatcher rd = request.getRequestDispatcher("public/views/home.jsp");
+        RequestDispatcher rd = request.getRequestDispatcher("public/views/Homepage.jsp");
         rd.forward(request, response);
     }
     
