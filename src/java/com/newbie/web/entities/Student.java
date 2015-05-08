@@ -13,7 +13,7 @@ package com.newbie.web.entities;
 public class Student {
     private int id;
     private String name;
-    private String sex;
+    private byte sex;
     private int age;
     private String hometown;
 
@@ -33,11 +33,11 @@ public class Student {
         this.name = name;
     }
 
-    public String getSex() {
+    public byte getSex() {
         return sex;
     }
 
-    public void setSex(String sex) {
+    public void setSex(byte sex) {
         this.sex = sex;
     }
 

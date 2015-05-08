@@ -29,7 +29,7 @@ public class StudentDAO {
             student.setId(rs.getInt(1));
             student.setName(rs.getString(2));
             student.setAge(rs.getInt(3));
-            student.setSex(rs.getString(4));
+            student.setSex(rs.getByte(4));
             student.setHometown(rs.getString(5));
             
             students.add(student);
