@@ -5,10 +5,31 @@
  */
 package com.newbie.web.utilities;
 
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.util.Date;
+
 /**
  *
  * @author trongbui
  */
 public class ConnectionUtilities {
-    
+
+    private ConnectionUtilities() {
+    }
+
+    public static Connection getConnection() {
+        try {
+            Class.forName(Constraints.SUN_DRIVER);
+            Connection conn = DriverManager.getConnection(Constraints.DB_CONNECTION_STRING);
+            return conn;
+        } catch (Exception exception) {
+            System.out.println(exception.getMessage());
+        }
+        return null;
+    }
+
+    public static java.sql.Date toSqlDate(Date date) {
+        return new java.sql.Date(date.getTime());
+    }
 }
