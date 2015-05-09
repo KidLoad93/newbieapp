@@ -5,10 +5,40 @@
  */
 package com.newbie.web.dal;
 
-/**
- *
- * @author trongbui
- */
+import com.newbie.web.entities.User;
+import com.newbie.web.utilities.DBUtilities;
+import java.sql.Connection;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+
 public class UserDAO {
-    
+
+    public static boolean checkUser(String username, String password) throws SQLException {
+        boolean isOk = false;
+        try {
+            Connection conn = DBUtilities.getConnection();
+            System.out.println("connect: "+ conn);
+            ResultSet rs = conn.createStatement().executeQuery("select * from users "
+                    + " where username = '" + username + "'"
+                    + " and password = '" + password + "'");
+            if (rs.next()) {
+                isOk = true;
+            }
+        } catch (Exception ex) {
+            System.out.println("Login Error Controller");
+        }
+        return isOk;
+    }
+
+    public static boolean updateUser(User user, String newPassword) {
+        boolean isOk = false;
+        try {
+            Connection conn = DBUtilities.getConnection();
+            String query = "update users set password = '" + newPassword + "' where username = '" + user.getUsername() + "'";
+            conn.createStatement().executeUpdate(query);
+        } catch (Exception ex) {
+            System.out.println("Change Password Error Controller");
+        }
+        return isOk;
+    }
 }
