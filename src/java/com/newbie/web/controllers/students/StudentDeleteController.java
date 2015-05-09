@@ -37,7 +37,7 @@ public class StudentDeleteController extends HttpServlet {
         response.setContentType("text/html;charset=UTF-8");
         PrintWriter out = response.getWriter();
         StudentDAO dao = new StudentDAO();
-        int id = Integer.parseInt(request.getParameter("id"));
+        String id = (request.getParameter("id"));
         dao.deleteStudent(id);
         
         response.sendRedirect("/newbie/index");
