@@ -35,8 +35,9 @@ public class LoginController extends HttpServlet {
                 User user = new User(username, password);
                 session.setAttribute("user", user);
                 request.setAttribute("error", "");
-                RequestDispatcher rd = request.getRequestDispatcher("/public/views/home.jsp");
-                rd.forward(request, response);
+                response.sendRedirect(request.getServletContext().getContextPath() + "/index");
+//                RequestDispatcher rd = request.getRequestDispatcher("/public/views/home.jsp");
+//                rd.forward(request, response);
             } else {
                 request.setAttribute("error", "Invalid account !");
                 RequestDispatcher rd = request.getRequestDispatcher("/public/views/login.jsp");
