@@ -99,4 +99,19 @@ public class StudentDAO {
                 
         } catch(Exception ex){ ex.printStackTrace();}
     }
+    
+    public int deleteStudent(String id) {
+        int n = 0;
+        Connection conn = DBUtilities.getConnection();
+        Statement state = null;
+        String sql = "delete from Students where id='" + id+"'";
+        try {
+            state = conn.createStatement();
+            n = state.executeUpdate(sql);
+        } catch (SQLException ex) {
+            Logger.getLogger(StudentDAO.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        return n;
+
+    }
 }
