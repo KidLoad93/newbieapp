@@ -36,6 +36,7 @@ public class UserDAO {
             Connection conn = DBUtilities.getConnection();
             String query = "update users set password = '" + newPassword + "' where username = '" + user.getUsername() + "'";
             conn.createStatement().executeUpdate(query);
+            isOk = true;
         } catch (Exception ex) {
             System.out.println("Change Password Error Controller");
         }

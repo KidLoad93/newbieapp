@@ -29,16 +29,21 @@ public class UserChangePassController extends HttpServlet {
             String confirmPassword = request.getParameter("confirmPassword");
             HttpSession session = request.getSession();
             User user = (User) session.getAttribute("user");
+            System.out.println("password : " + user.getPassword());
             String message = "";
             if (!confirmPassword.equals(newPassword)) {
                 message = "Invalid Confirmpassword!";
-            } else if (user.getPassword().equals(oldPassword)) {
-                message = "Invalid password !";
+            } else if (user == null) {
+                message = "You didn't login!";
             } else {
-                if (UserDAO.updateUser(user, newPassword)) {
-                    message = "Update successfully !";
+                if (!user.getPassword().equals(oldPassword)) {
+                    message = "Invalid password !";
                 } else {
-                    message = "Not Successfully !";
+                    if (UserDAO.updateUser(user, newPassword)) {
+                        message = "Update successfully !";
+                    } else {
+                        message = "Not Successfully !";
+                    }
                 }
             }
             request.setAttribute("message", message);
