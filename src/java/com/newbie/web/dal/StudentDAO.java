@@ -14,6 +14,7 @@ import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.sql.Statement;
 import java.util.ArrayList;
 import java.util.logging.Level;
 import java.util.logging.Logger;
@@ -63,5 +64,20 @@ public class StudentDAO {
                    
                 
         } catch(Exception ex){ ex.printStackTrace();}
+    }
+    
+    public int deleteStudent(int id) {
+        int n = 0;
+        Connection conn = DBUtilities.getConnection();
+        Statement state = null;
+        String sql = "delete from Students where id=" + id;
+        try {
+            state = conn.createStatement();
+            n = state.executeUpdate(sql);
+        } catch (SQLException ex) {
+            Logger.getLogger(StudentDAO.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        return n;
+
     }
 }

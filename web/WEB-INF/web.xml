@@ -54,7 +54,7 @@
     </servlet-mapping>
     <servlet-mapping>
         <servlet-name>StudentDeleteController</servlet-name>
-        <url-pattern>/users/delete</url-pattern>
+        <url-pattern>/students/delete</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>

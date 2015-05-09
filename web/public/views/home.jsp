@@ -77,8 +77,8 @@
                             <td class="5">${student.hometown}</td>
                             <td>
                                 <div class="btn-group" role="group" >
-                                    <a href="/students/delete?id=${student.id}"><button type="button" class="btn btn-default" >Delete</button></a>
-                                    <a href="/students/edit?id=${student.id}"><button type="button" class="btn btn-default" >Update</button></a>
+                                    <a href="students/delete?id=${student.id}"><button type="button" class="btn btn-default" onclick="return confirm('Are you sure?')">Delete</button></a>
+                                    <a href="students/edit?id=${student.id}"><button type="button" class="btn btn-default" >Update</button></a>
                                 </div>    
                             </td>
                         </tr>
