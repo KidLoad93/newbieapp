@@ -8,16 +8,10 @@ $(function() {
   modal.find('.modal-title').text('New message to ' + recipient)
   modal.find('.modal-body input').val(recipient)
 });
-	//data-spy
-	$("body").scrollspy({target:'.example'})
 	//auto active
-	$("#home a:contains('Home')").parent().addClass('active');
-	$("#about a:contains('About')").parent().addClass('active');
-	$("#exercise a:contains('Exercise')").parent().addClass('active');
-	$("#life-style-diet a:contains('Life Style')").parent().addClass('active');
-	$("#life-style-habit a:contains('Life Style')").parent().addClass('active');
-	$("#life-style-yoga a:contains('Life Style')").parent().addClass('active');
-	$("#science a:contains('Science&Theory')").parent().addClass('active');
+	$("#search a:contains('NewbieApp')").parent().addClass('active');
+	$("#add a:contains('Add Student')").parent().addClass('active');
+	$("#change a:contains('Change')").parent().addClass('active');
 	// make menu auto load
 	$('ul.nav li.dropdown').hover(function(){
 $('.dropdown-menu', this).fadeIn();

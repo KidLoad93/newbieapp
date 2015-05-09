@@ -7,7 +7,8 @@
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <title>Newbie App</title>
          <link href="../css/mystyle.css" rel="stylesheet">
-    
+     <script src="../js/bootstrap.js"></script>
+   <script src="../js/myscript.js"></script>
 
     </head>
     <body >

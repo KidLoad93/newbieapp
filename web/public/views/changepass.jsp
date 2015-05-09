@@ -3,12 +3,12 @@
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <link href="../css/bootstrap.css" rel="stylesheet">
-   <script src="js/bootstrap.js"></script>
-  
+   <script src="../js/bootstrap.js"></script>
+   <script src="../js/myscript.js"></script>
     </head>
     <body>
 
-         <section class="container" id="add">
+         <section class="container" id="change">
          <!-- header -->
       <%@include file="../components/header.jsp" %>
 <!-- endhere -->

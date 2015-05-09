@@ -3,14 +3,14 @@
    
     <div class="navbar-header">
       
-      <a class="navbar-brand" href="#">NewbieApp</a>
+      <a class="navbar-brand" href="Homepage.jsp">NewbieApp</a>
 
     </div>
 
     <!-- Collect the nav links, forms, and other content for toggling -->
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
       <ul class="nav navbar-nav">
-        <li><a href="#">Add Student</a></li>
+        <li><a href="addstudentpage.jsp">Add Student</a></li>
        
       </ul>
       <form class="navbar-form navbar-left" role="search">
@@ -23,9 +23,9 @@
         <li class="dropdown">
           <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">ToanLM <span class="caret"></span></a>
           <ul class="dropdown-menu" role="menu">
-            <li><a href="#">Log out</a></li>
+            <li><a href="login.jsp">Log out</a></li>
             <li class="divider"></li>
-            <li><a href="#">Change password</a></li>
+            <li><a href="changepass.jsp">Change password</a></li>
             
           </ul>
         </li>

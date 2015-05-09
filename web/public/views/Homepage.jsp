@@ -5,7 +5,8 @@
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <link href="../css/bootstrap.css" rel="stylesheet">
    <script src="js/bootstrap.js"></script>
-  
+   <script src="../js/bootstrap.js"></script>
+   <script src="../js/myscript.js"></script>
     </head>
     <body>
 
@@ -19,7 +20,7 @@
             <div class="panel panel-default">
  
                 <!-- Default panel contents -->
-  <div class="panel-heading">Search result</div>
+  <div class="panel-heading">Student information</div>
 
   <!-- Table -->
   <table class="table table-hover table-striped">
