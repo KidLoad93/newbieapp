@@ -85,7 +85,7 @@ font-family: 'Raleway', sans-serif;
   margin-top: 20px;
 }
 
-.login input[type=submit]{
+.login input[type=button]{
   width: 150px;
   height: 55px;
   background: #fff;
@@ -102,12 +102,12 @@ font-family: 'Raleway', sans-serif;
   
 }
 
-.login input[type=submit]:hover{
+.login input[type=button]:hover{
   color: #000000;
   background: #ffffff;
 }
 
-.login input[type=submit]:active{
+.login input[type=button]:active{
 
 }
 
@@ -121,7 +121,7 @@ font-family: 'Raleway', sans-serif;
   border: 2px solid #ffffff;
 }
 
-.login input[type=submit]:focus{
+.login input[type=button]:focus{
   outline: none;
 }
 

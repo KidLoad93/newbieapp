@@ -21,21 +21,3 @@ $('.dropdown-menu', this).fadeOut('fast');
 	$("[data-toggle='tooltip']").tooltip({animation:true});
 }) ;
 
-$('#myModal').on('show.bs.modal', function (event) {
-  var button = $(event.relatedTarget) // Button that triggered the modal
-            var pid = button.data('id') 
-  var name = button.data('name') 
-  var age = button.data('age') 
-  var sex = button.data('sex') 
-  var home= button.data('home') 
- 
-  var modal = $(this)
-  modal.find('#id').val(id)
-  modal.find('#name').val(name)
-  modal.find('#age').val(age)
-  if(sex==0)  modal.find('#female').prop("checked",true) 
-  if(sex==1)  modal.find('male').prop("checked",true) 
-  
-  modal.find('#home').val(home)
-  
-});

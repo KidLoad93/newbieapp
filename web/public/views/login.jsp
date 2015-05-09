@@ -22,17 +22,16 @@
     <div class="wel">
                   "World most advanced Student Management System"
                </div>
-    
-    <div class="login">
+     <div class="login">
        
-        <form action="Homepage.jsp" method="POST">          
+              
       
                 <input type="text"  name="txtName" placeholder="Username" />
          
          
                     <input type="password" name="txtPass" placeholder="Password" />
-            <input type="submit" value="Login">
-        </form>
+            <input type="button" value="Login">
+       
   </div>
 
        
