@@ -5,7 +5,7 @@
         <servlet-class>com.newbie.web.controllers.LoginController</servlet-class>
     </servlet>
     <servlet>
-        <servlet-name>AddStudentController</servlet-name>
+        <servlet-name>StudentAddController</servlet-name>
         <servlet-class>com.newbie.web.controllers.students.StudentAddController</servlet-class>
     </servlet>
     <servlet>
@@ -33,8 +33,8 @@
         <url-pattern>/login</url-pattern>
     </servlet-mapping>
     <servlet-mapping>
-        <servlet-name>AddStudentController</servlet-name>
-        <url-pattern>/add</url-pattern>
+        <servlet-name>StudentAddController</servlet-name>
+        <url-pattern>/students/add</url-pattern>
     </servlet-mapping>
     <servlet-mapping>
         <servlet-name>HomeController</servlet-name>

@@ -11,17 +11,29 @@ package com.newbie.web.entities;
  * @author trongbui
  */
 public class Student {
-    private int id;
+    private String id;
     private String name;
-    private byte sex;
     private int age;
+    private byte sex;
     private String hometown;
 
-    public int getId() {
+    public Student() {
+    }
+
+    public Student(String id, String name, int age, byte sex, String hometown) {
+        this.id = id;
+        this.name = name;
+        this.age = age;
+        this.sex = sex;
+        this.hometown = hometown;
+    }
+
+    
+    public String getId() {
         return id;
     }
 
-    public void setId(int id) {
+    public void setId(String id) {
         this.id = id;
     }
 
