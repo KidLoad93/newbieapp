@@ -8,8 +8,6 @@ package com.newbie.web.controllers;
 import com.newbie.web.dal.StudentDAO;
 import com.newbie.web.entities.Student;
 import java.io.IOException;
-import java.io.PrintWriter;
-import java.util.ArrayList;
 import java.util.List;
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
@@ -28,10 +26,10 @@ public class HomeController extends HttpServlet {
             throws ServletException, IOException {
         List<Student> students = StudentDAO.getAllStudents();
         request.setAttribute("students", students);
-        RequestDispatcher rd = request.getRequestDispatcher("public/views/Homepage.jsp");
+        RequestDispatcher rd = request.getRequestDispatcher("public/views/home.jsp");
         rd.forward(request, response);
     }
-    
+
     @Override
     public String getServletInfo() {
         return "NewbieApp";
