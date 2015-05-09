@@ -12,7 +12,7 @@
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <title>NewbieApp</title>
         <link href="public/css/bootstrap.css" rel="stylesheet">
-        <script src="js/bootstrap.js"></script>
+        <script src="public/js/bootstrap.js"></script>
     </head>
     <body>
 
@@ -36,9 +36,8 @@
                         </ul>
                         <form class="navbar-form navbar-left" role="search">
                             <div class="form-group">
-                                <input type="text" class="form-control" placeholder="Search">
+                                <input type="text" class="form-control search" placeholder="Search">
                             </div>
-                            <button type="submit" class="btn btn-danger">Go!</button>
                         </form>
                         <ul class="nav navbar-nav navbar-right">
                             <li><a href="#">Link</a></li>
@@ -70,16 +69,16 @@
                         <td>Hometown</td>
                     </tr>
                     <c:forEach items="${students}" var="student">
-                        <tr>
-                            <td>${student.id}</td>
-                            <td>${student.name}</td>
-                            <td>${student.sex}</td>
-                            <td>${student.age}</td>
-                            <td>${student.hometown}</td>
+                        <tr class="item">
+                            <td class="1">${student.id}</td>
+                            <td class="2">${student.name}</td>
+                            <td class="3">${student.sex}</td>
+                            <td class="4">${student.age}</td>
+                            <td class="5">${student.hometown}</td>
                             <td>
                                 <div class="btn-group" role="group" >
-                                    <a href="/students/delete"><button type="button" class="btn btn-default" >Delete</button></a>
-                                    <a href="/students/edit"><button type="button" class="btn btn-default" >Update</button></a>
+                                    <a href="/students/delete?id=${student.id}"><button type="button" class="btn btn-default" >Delete</button></a>
+                                    <a href="/students/edit?id=${student.id}"><button type="button" class="btn btn-default" >Update</button></a>
                                 </div>    
                             </td>
                         </tr>
@@ -90,5 +89,7 @@
             <!-- Button trigger modal -->
         </section>
 
+        <script type="text/javascript" src="public/js/main.js"></script>
+        
     </body>
 </html>
