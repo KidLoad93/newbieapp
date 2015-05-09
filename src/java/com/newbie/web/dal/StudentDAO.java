@@ -9,8 +9,14 @@ import java.util.List;
 import com.newbie.web.entities.Student;
 import com.newbie.web.utilities.DBUtilities;
 import java.sql.Connection;
+import java.sql.Date;
+import java.sql.DriverManager;
+import java.sql.PreparedStatement;
 import java.sql.ResultSet;
+import java.sql.SQLException;
 import java.util.ArrayList;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 /**
  *
@@ -37,5 +43,25 @@ public class StudentDAO {
         }catch(Exception ex){ ex.printStackTrace();}
         
         return students;
+    }
+    public void Update(String Name, byte Sex ,int Age, String Hometown){
+         Student newStudent=null;
+        try {
+                 Connection conn = DBUtilities.getConnection();
+               PreparedStatement ps=conn.prepareStatement("insert into Students values(?,?,?,?)");
+            
+                 ps.setString(1, Name);
+               ps.setInt(2, Sex);
+               ps.setInt(3, Age);
+              
+               ps.setString(4, Hometown);
+              
+               
+               ps.executeUpdate();
+            
+                    
+                   
+                
+        } catch(Exception ex){ ex.printStackTrace();}
     }
 }

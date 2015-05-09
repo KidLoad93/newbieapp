@@ -31,8 +31,8 @@
        <p><span class="label label-primary">Age</span>
            <input name="txtAge" id="age" type="text" value=""></p>
        <p><span class="label label-danger">Gender</span>
-           <input type="radio" name="sex" >Male</input>
-           <input type="radio" name="sex" >Female</input>
+           <input type="radio" name="sex" >Male
+           <input type="radio" name="sex" >Female
 </p>
    
   
