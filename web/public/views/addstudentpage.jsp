@@ -11,43 +11,7 @@
 
          <section class="container" id="add">
          <!-- header -->
-         <nav class="navbar navbar-inverse">
-  <div class="container-fluid">
-   
-    <div class="navbar-header">
-      
-      <a class="navbar-brand" href="#">NewbieApp</a>
-
-    </div>
-
-    <!-- Collect the nav links, forms, and other content for toggling -->
-    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-      <ul class="nav navbar-nav">
-        <li class="active"><a href="#">Link <span class="sr-only">(current)</span></a></li>
-        <li><a href="#">Add Student</a></li>
-       
-      </ul>
-      <form class="navbar-form navbar-left" role="search">
-        <div class="form-group">
-          <input type="text" class="form-control" placeholder="Search">
-        </div>
-        <button type="submit" class="btn btn-danger">Go!</button>
-      </form>
-      <ul class="nav navbar-nav navbar-right">
-        <li><a href="#">Link</a></li>
-        <li class="dropdown">
-          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">ToanLM <span class="caret"></span></a>
-          <ul class="dropdown-menu" role="menu">
-            <li><a href="#">Log out</a></li>
-            <li class="divider"></li>
-            <li><a href="#">Change password</a></li>
-            
-          </ul>
-        </li>
-      </ul>
-    </div><!-- /.navbar-collapse -->
-  </div><!-- /.container-fluid -->
-</nav>
+       <%@include file="../components/header.jsp" %>
 <!-- endhere -->
         <div class="panel panel-success col-lg-9">
   <div class="panel-heading">
