@@ -5,8 +5,11 @@
  */
 package com.newbie.web.controllers.students;
 
+import com.newbie.web.dal.StudentDAO;
+import com.newbie.web.entities.Student;
 import java.io.IOException;
 import java.io.PrintWriter;
+import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
@@ -30,21 +33,84 @@ public class StudentAddController extends HttpServlet {
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
-        try (PrintWriter out = response.getWriter()) {
-            /* TODO output your page here. You may use following sample code. */
-            out.println("<!DOCTYPE html>");
-            out.println("<html>");
-            out.println("<head>");
-            out.println("<title>Servlet AddStudentController</title>");            
-            out.println("</head>");
-            out.println("<body>");
-            out.println("<h1>Servlet AddStudentController at " + request.getContextPath() + "</h1>");
-            out.println("</body>");
-            out.println("</html>");
+        //get data
+        PrintWriter out = response.getWriter();
+        String id = request.getParameter("txtId");
+        String name = request.getParameter("txtName");
+        int age = 0;
+        Byte sex = Byte.parseByte(request.getParameter("sex"));
+        String hometown = request.getParameter("txtHome");
+
+        //validate data
+        String errID = "";
+        String errName = "";
+        String errAge = "";
+        String errHometown = "";
+        boolean errDetected = false;
+        if (id.length() > 8) {
+            errID += "length of ID must equal or less than 8 characters!";
+            errDetected = true;
         }
+        if(StudentDAO.checkExist(id)){
+            errID += "This ID already have!";
+            errDetected = true;
+        }
+        String prefix =""+ id.charAt(0) + id.charAt(1);
+        if(prefix.toUpperCase().equals("SE") ==false && prefix.toUpperCase().equals("BA") ==false){
+            errID += "ID must start with SE or BA!";
+            errDetected = true;
+        }
+        int count =0;
+        for(int i=2;i<id.length();i++){
+            if(id.charAt(i)<'0' || id.charAt(i)>'9'){
+                count ++;
+            }
+        }
+        if(count>0){
+            errID += "ID must start with SE or Ba then follow by numbers!";
+            errDetected = true;
+        }
+        if (name.length() > 30) {
+            errName += "length of Name must equal or less than 30 characters!";
+            errDetected = true;
+        }
+        try {
+            age = Integer.parseInt(request.getParameter("txtAge"));
+            if (age < 0) {
+                errAge += "Age must be positive integer!";
+                errDetected = true;
+            }
+        } catch (Exception e) {
+            errAge += "Age must be positive integer!";
+            errDetected = true;
+        }
+        if (errHometown.length() > 50) {
+            errHometown += "length of Hometown must equal or less than 50 characters!";
+            errDetected = true;
+        }
+        if (errDetected) {
+            request.setAttribute("errID", errID);
+            request.setAttribute("errName", errName);
+            request.setAttribute("errAge", errAge);
+            request.setAttribute("errHometown", errHometown);
+            dispatch(request, response, "/public/views/addstudentpage.jsp");
+        } else {
+            //add
+            Student s = new Student(id, name, age, sex, hometown);
+            StudentDAO.addStudent(s);
+        }
+
+    }
+
+    private void dispatch(HttpServletRequest request, HttpServletResponse response, String page)
+            throws ServletException, IOException {
+        RequestDispatcher dispatcher
+                = getServletContext().getRequestDispatcher(page);
+        dispatcher.forward(request, response);
     }
 
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">
+
     /**
      * Handles the HTTP <code>GET</code> method.
      *
